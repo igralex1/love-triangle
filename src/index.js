@@ -4,10 +4,9 @@
  */
 module.exports = function getLoveTrianglesCount(preferences = []) {
   // your implementation
-
-  
   var count = 0;
   for (let i = 0 ; i < preferences.length; i++){
+  
     indexFirst = i;          
     valueFirst = preferences[indexFirst];      
   
@@ -16,11 +15,9 @@ module.exports = function getLoveTrianglesCount(preferences = []) {
   
     indexThird = valueSecond -1;     
     valueThird = preferences[indexThird];      
-  
-   
-    if (++indexFirst == valueThird){
+
+    if (++indexFirst == valueThird & !(valueThird == valueFirst)){
       count+=1;
-      
     }
   }
   count = Math.round(count/3);
